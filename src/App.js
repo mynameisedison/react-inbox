@@ -182,8 +182,26 @@ class App extends Component {
     return counter;
   }
 
-  addLabel=()=>{
-    
+  addLabel=(label)=>{
+    this.state.messagez.forEach(e=>{
+      if(e.selected && !e.labels.includes(label)){
+        e.labels.push(label)
+      }
+    })
+    this.setState({
+      messagez:this.state.messagez
+    })
+  }
+  removeLabel=(label)=>{
+    this.state.messagez.forEach(e=>{
+      let index = e.labels.indexOf(label)
+      if(e.selected && e.labels.includes(label)){
+        e.labels.splice(index,1)
+      }
+    })
+    this.setState({
+      messagez:this.state.messagez
+    })
   }
 
 
@@ -196,6 +214,9 @@ class App extends Component {
         toggleUnreadSelect={this.toggleUnreadSelect}
         deleteSelected={this.deleteSelected}
         getUnRead={this.getUnRead}
+        addLabel={this.addLabel}
+        removeLabel={this.removeLabel}
+
       />
       {/* <Compose/> */}
       <MessageList

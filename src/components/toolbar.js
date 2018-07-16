@@ -30,16 +30,16 @@ export default class Toolbar extends Component {
 
           <select className="form-control label-select">
             <option>Apply label</option>
-            <option value="dev">dev</option>
-            <option value="personal">personal</option>
-            <option value="gschool">gschool</option>
+            <option value="dev" onClick={()=>this.props.addLabel("dev")}>dev</option>
+            <option value="personal" onClick={()=>this.props.addLabel("personal")}>personal</option>
+            <option value="gschool" onClick={()=>this.props.addLabel("gschool")}>gschool</option>
           </select>
 
           <select className="form-control label-select">
             <option>Remove label</option>
-            <option value="dev">dev</option>
-            <option value="personal">personal</option>
-            <option value="gschool">gschool</option>
+            <option value="dev" onClick={()=>this.props.removeLabel("dev")}>dev</option>
+            <option value="personal" onClick={()=>this.props.removeLabel("personal")}>personal</option>
+            <option value="gschool" onClick={()=>this.props.removeLabel("gschool")}>gschool</option>
           </select>
 
           <button className="btn btn-default" onClick={()=>this.props.deleteSelected()}>
