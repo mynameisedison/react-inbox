@@ -12,7 +12,7 @@ export default class Toolbar extends Component {
             unread messages
           </p>
 
-          <a className="btn btn-danger">
+          <a className="btn btn-danger" onClick={()=>this.props.toggleCompose()}>
             <i className="fa fa-plus"></i>
           </a>
 
