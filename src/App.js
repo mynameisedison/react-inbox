@@ -60,18 +60,8 @@ class App extends Component {
     this.setState({messagez: selectedMessage})
   }
   toggleReadSelect = async (truFals) => {
-    // this.state.messagez.forEach(e => {
-    // if (e.selected) {
-    //   e.read = thing
-    // }
-    // })
-    // this.setState({messagez: this.state.messagez})
-    // let index = e.id
-    // let selectedMessage = this.state.messagez.slice(0)
-    // let star = selectedMessage.filter(e => e.id === index)[0]
 
     let messageId = this.state.messagez.filter(e => e.selected).map(e => e.id)
-    // let isRead = this.state.messagez.filter(e => e.selected === true).forEach(e => e.read = truFals)
 
     let item = {
       messageIds: messageId,
@@ -94,12 +84,8 @@ class App extends Component {
 
   toggleStar = async (e) => {
     let index = this.state.messagez.indexOf(e) + 1
-    let selectedMessage = this.state.messagez.slice(0)
-    // selectedMessage[index].starred = !selectedMessage[index].starred
     let star = selectedMessage.filter(e => e.id === index)[0]
     let isStarred = star.starred ? star.starred = false : star.starred = true
-
-    // this.patchBlock([index], 'star', 'starred', isStarred)
 
     let item = {
       messageIds: [index],
@@ -175,14 +161,6 @@ class App extends Component {
   }
 
   deleteSelected = async() => {
-    // this.state.messagez.forEach(e => {
-    //   let index = this.state.messagez.indexOf(e)
-    //   if (e.selected) {
-    //     this.state.messagez.splice(index, 1)
-    //   }
-    // })
-    // this.setState({messagez: this.state.messagez})
-
     let messageId = this.state.messagez.filter(message => message.selected).map(message => message.id)
     let noDelete = this.state.messagez.filter(message => message.selected !== true)
 
@@ -214,12 +192,7 @@ class App extends Component {
   }
 
   addLabel = async(label) => {
-    // this.state.messagez.forEach(e => {
-    //   if (e.selected && !e.labels.includes(label)) {
-    //     e.labels.push(label)
-    //   }
-    // })
-    // this.setState({messagez: this.state.messagez})
+
     let messageId = this.state.messagez.filter(message => message.selected).map(message => message.id)
 
 
@@ -241,13 +214,7 @@ class App extends Component {
     this.setState({messagez: message})
   }
   removeLabel = async(label) => {
-    // this.state.messagez.forEach(e => {
-    //   let index = e.labels.indexOf(label)
-    //   if (e.selected && e.labels.includes(label)) {
-    //     e.labels.splice(index, 1)
-    //   }
-    // })
-    // this.setState({messagez: this.state.messagez})
+
     let messageId = this.state.messagez.filter(message => message.selected).map(message => message.id)
     let item = {
       messageIds: messageId,
