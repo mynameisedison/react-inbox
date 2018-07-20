@@ -84,7 +84,7 @@ class App extends Component {
 
   toggleStar = async (e) => {
     let index = this.state.messagez.indexOf(e) + 1
-    let star = selectedMessage.filter(e => e.id === index)[0]
+    let star = this.state.messagez.filter(e => e.id === index)[0]
     let isStarred = star.starred ? star.starred = false : star.starred = true
 
     let item = {
